@@ -11,6 +11,39 @@ This project is an ETL pipeline built with Apache Airflow and managed using Astr
 4. Load: Data is logged, saved to a file (e.g., CSV), or passed to another storage system (e.g., a database).
 5. Optional Extensions: The cleaned data can feed into analytics dashboards, ML pipelines, or external systems.
 
+        ┌────────────────────┐
+        │    Scheduler       │
+        │  (Airflow DAG)     │
+        └────────┬───────────┘
+                 │
+                 ▼
+        ┌────────────────────┐
+        │   Extract Task     │
+        │  (HttpHook - GET   │
+        │   Open-Meteo API)  │
+        └────────┬───────────┘
+                 │
+                 ▼
+        ┌────────────────────┐
+        │   Transform Task   │
+        │  (Clean + Format   │
+        │   JSON Response)   │
+        └────────┬───────────┘
+                 │
+                 ▼
+        ┌────────────────────┐
+        │     Load Task      │
+        │ (Store or Log data │
+        │   in CSV/Database) │
+        └────────┬───────────┘
+                 │
+                 ▼
+        ┌────────────────────┐
+        │   Downstream Apps  │
+        │  (Dashboard / ML)  │
+        └────────────────────┘
+
+
 #### -------------------------------------------------------------------------------------------------------------
 ### Project Overview
 #### -------------------------------------------------------------------------------------------------------------
