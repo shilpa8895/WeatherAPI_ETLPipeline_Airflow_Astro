@@ -45,7 +45,7 @@ brew install astro
 2. Navigate to Admin → Connections → + Add.
 Fill in:
 
-  >> Postgres 
+  *.* Postgres 
   Conn Id: postgres_default
   Conn Type: Postgres
   Host: Name of the Postgres container (from docker-compose.yml)
