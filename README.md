@@ -89,7 +89,7 @@ Fill in:
 
  *.* Open Meteo Api
   ``` plaintext
-  Conn Id: open_meteo_api
+  Conn Id: [open_meteo_api](https://api.open-meteo.com/v1)
   Conn Type: HTTP  
   Host: https://api.open-meteo.com
   Leave Login and Password blank
