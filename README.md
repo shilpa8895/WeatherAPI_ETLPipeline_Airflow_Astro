@@ -88,7 +88,7 @@ To deploy the ETL pipeline in production with AWS RDS:
 #### -------------------------------------------------------------------------------------------------------------
 ### Repository Structure
 #### -------------------------------------------------------------------------------------------------------------
-
+``` plaintext
 ETLAirflow/
 ├── dags/                      # DAGs (Directed Acyclic Graphs) folder for Airflow workflows
 │   ├── etlweather.py          # Main DAG to extract, transform, and load weather data
@@ -107,6 +107,7 @@ ETLAirflow/
 ├── requirements.txt           # Python dependencies for the whole project environment
 ├── packages.txt               # System-level packages (for Docker image)
 ├── README.md                  # Project documentation and setup guide
+```
 
 
 
