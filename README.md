@@ -46,17 +46,21 @@ brew install astro
 Fill in:
 
   *.* Postgres 
+  ``` plaintext
   Conn Id: postgres_default
   Conn Type: Postgres
   Host: Name of the Postgres container (from docker-compose.yml)
   Login/Password: As per the docker-compose.yml (usually postgres/postgres)
   Port: 5432
+  ```
 
-  >> Open Meteo Api
+ *.* Open Meteo Api
+  ``` plaintext
   Conn Id: open_meteo_api
   Conn Type: HTTP  
   Host: https://api.open-meteo.com
   Leave Login and Password blank
+   ```
 
 #### Trigger the DAG
 
@@ -67,12 +71,14 @@ Fill in:
 #### Test Data in PostgreSQL (Optional via DBeaver)
 1. Install DBeaver and launch it.
 2. Create a new connection:
+   ``` plaintext
     Choose PostgreSQL
     Host: localhost
     Port: 5432
     Username/Password: postgres / postgres
-3. Click Test Connection, then Finish.
-4. Run the SQL query:
+   ```
+4. Click Test Connection, then Finish.
+5. Run the SQL query:
 ```
 SELECT * FROM weather_data;
 ```
@@ -81,9 +87,8 @@ After triggering the DAG multiple times, you should see populated weather record
 #### Deployment (on AWS)
 To deploy the ETL pipeline in production with AWS RDS:
 1.Create a PostgreSQL Database on AWS RDS.
-2. Copy the endpoint URL - 
-  Go to Airflow UI → Admin → Connections → Add. 
-    Host: Use the RDS endpoint URL
+2. Copy the endpoint URL - Go to Airflow UI → Admin → Connections → Add. 
+   Host: Use the RDS endpoint URL
 
 #### -------------------------------------------------------------------------------------------------------------
 ### Repository Structure
